@@ -13,7 +13,7 @@ function scssTask(){
 }
 
 function jsTask(){
-    return src('app/js/style.js', {sourcemaps: true, allowEmpty: true})
+    return src('app/js/main.js', {sourcemaps: true, allowEmpty: true})
         .pipe(terser())
         .pipe(dest('dist', {sourcemaps: "."}))
 }
