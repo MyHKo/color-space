@@ -1,5 +1,4 @@
 'use strict'
-import {setInitialPositions} from "./style.js"
 import {generateBlack, generateRed, generateBlue, generateYellow, paintLabels} from "./colors.js";
 
 function changeColor(circle){
@@ -20,8 +19,6 @@ function changeColor(circle){
             break;
     }
 }
-
-setInitialPositions();
 
 document.addEventListener('click', (event) => {
     if(event.target.classList.contains('circle')){
