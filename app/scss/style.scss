@@ -40,6 +40,30 @@ $yellowSize: $redSize - $redSize /2;
   background-color: #FFFF00;
 }
 
+
+@media(max-width: $maxSize) {
+  .circles{
+    width: $maxSize * 0.9;
+    height: $maxSize * 0.9;
+  }
+
+  .black{
+    height: $maxSize * 0.9;
+    width: $maxSize * 0.9;
+  }
+
+  .red{
+    height: $redSize * 0.9;
+    width: $redSize * 0.9;
+  }
+
+  .yellow{
+    height: $yellowSize * 0.9;
+    width: $yellowSize * 0.9;
+  }
+}
+
+
 .labels{
   position: absolute;
   width: 120px;

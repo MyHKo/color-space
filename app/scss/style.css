@@ -34,6 +34,24 @@
   background-color: #FFFF00;
 }
 
+@media (max-width: 500px) {
+  .circles {
+    width: 450px;
+    height: 450px;
+  }
+  .black {
+    height: 450px;
+    width: 450px;
+  }
+  .red {
+    height: 225px;
+    width: 225px;
+  }
+  .yellow {
+    height: 112.5px;
+    width: 112.5px;
+  }
+}
 .labels {
   position: absolute;
   width: 120px;
