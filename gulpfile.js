@@ -7,22 +7,23 @@ const gulp = require("gulp");
 const browserSync = require('browser-sync').create();
 
 function scssTask(){
-    return src('app/scss/style.css', {sourcemaps: true}).pipe(sass())
+    return src('app/scss/style.css', {sourcemaps: true, allowEmpty: true}).pipe(sass())
         .pipe(postcss([cssnano()]))
         .pipe(dest('dist', {sourcemaps: "."}))
 }
 
 function jsTask(){
-    return src('app/js/style.js', {sourcemaps: true})
+    return src('app/js/style.js', {sourcemaps: true, allowEmpty: true})
         .pipe(terser())
         .pipe(dest('dist', {sourcemaps: "."}))
 }
 
 function browserSyncServe(cb){
-    browsersync.init({
+    browserSync.init({
         server: {
             baseDir: '.'
-        }
+        },
+        browser: 'Chrome'
     });
     cb();
 }
