@@ -59,7 +59,8 @@
 }
 
 .label {
-  color: #FF0000;
+  color: #000000;
+  transition: color 0.3s ease;
 }
 
 /*# sourceMappingURL=style.css.map */

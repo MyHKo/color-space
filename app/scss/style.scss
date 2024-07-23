@@ -71,7 +71,8 @@ $yellowSize: $redSize - $redSize /2;
 }
 
 .label{
-  color: #FF0000;
+  color: #000000;
+  transition: color 0.3s ease;
 }
 
 

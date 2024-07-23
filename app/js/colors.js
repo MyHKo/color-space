@@ -77,8 +77,6 @@ function paintLabels(circle){
     const rgb = circle.dataset.colorRgb
     const hex = circle.dataset.colorHex
 
-    console.log(rgb)
-
     labels[1].style.color = 'rgb' + rgb
     labels[0].style.color = 'rgb' + rgb
 
