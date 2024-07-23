@@ -1,37 +1,61 @@
 'use strict'
 
+let white;
+let red;
+let green;
+let blue;
+let stringColor
+let hexStringColor
+
+
 function generateBlack(circle){
-    const labels = document.querySelectorAll(".label")
-    let newColor;
-    let hexColor;
     let stringColor;
     let hexStringColor
 
-    newColor = Math.floor(Math.random() * 256);
-    hexColor = colorToHex(newColor)
-    stringColor = `(${newColor},${newColor},${newColor})`
-    hexStringColor = `#${hexColor}${hexColor}${hexColor}`
+    white = Math.floor(Math.random() * 256);
+    stringColor = `(${white},${white},${white})`
+    hexStringColor = `#${colorToHex(white)}${colorToHex(white)}${colorToHex(white)}`
 
-    paint(circle, stringColor,hexColor)
+    paint(circle, stringColor, hexStringColor)
 }
 
 function generateRed(circle){
-    const labels = document.querySelectorAll(".label")
-    let red;
-    let green;
-    let blue;
-    let stringColor
-    let hexStringColor
-
-    red  = Math.floor(Math.random() * 256);
+    red = Math.floor(Math.random() * 256);
     green = Math.floor(Math.random() * 51);
     blue = Math.floor(Math.random() * 51);
+
+    while(red - 50 < green || red - 50 < blue)
+        red = Math.floor(Math.random() * 256);
 
     stringColor = `(${red},${green},${blue})`
     hexStringColor = `#${colorToHex(red)}${colorToHex(green)}${colorToHex(blue)}`
 
     paint(circle, stringColor, hexStringColor)
+}
 
+function generateBlue(circle){
+    red = Math.floor(Math.random() * 150);
+    green = Math.floor(Math.random() * 150);
+    blue = Math.floor(Math.random() * 256);
+
+    while(blue < green || blue - 100 < red)
+        blue = Math.floor(Math.random() * 256);
+
+    stringColor = `(${red},${green},${blue})`
+    hexStringColor = `#${colorToHex(red)}${colorToHex(green)}${colorToHex(blue)}`
+
+    paint(circle, stringColor, hexStringColor)
+}
+
+function generateYellow(circle){
+    red = Math.floor(Math.random() * (256-200) + 200);
+    green = Math.floor(Math.random() * (256 - 200) + 200);
+    blue = Math.floor(Math.random() * 50);
+
+    stringColor = `(${red},${green},${blue})`
+    hexStringColor = `#${colorToHex(red)}${colorToHex(green)}${colorToHex(blue)}`
+
+    paint(circle, stringColor, hexStringColor)
 }
 
 function paint(circle, rgb, hex){
@@ -53,4 +77,4 @@ function colorToHex(color){
     return color
 }
 
-export {generateBlack}
+export {generateBlack, generateRed, generateBlue, generateYellow}
