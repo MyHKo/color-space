@@ -61,7 +61,24 @@ function generateYellow(circle){
 function paint(circle, rgb, hex){
     const labels = document.querySelectorAll(".label")
 
+    circle.dataset.colorRgb = rgb
+    circle.dataset.colorHex = hex
+
     circle.style.backgroundColor = 'rgb' + rgb
+    labels[1].style.color = 'rgb' + rgb
+    labels[0].style.color = 'rgb' + rgb
+
+    labels[1].textContent = rgb
+    labels[0].textContent = hex
+}
+
+function paintLabels(circle){
+    const labels = document.querySelectorAll(".label")
+    const rgb = circle.dataset.colorRgb
+    const hex = circle.dataset.colorHex
+
+    console.log(rgb)
+
     labels[1].style.color = 'rgb' + rgb
     labels[0].style.color = 'rgb' + rgb
 
@@ -77,4 +94,4 @@ function colorToHex(color){
     return color
 }
 
-export {generateBlack, generateRed, generateBlue, generateYellow}
+export {generateBlack, generateRed, generateBlue, generateYellow, paintLabels};

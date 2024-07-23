@@ -1,6 +1,6 @@
 'use strict'
 import {setInitialPositions} from "./style.js"
-import {generateBlack, generateRed, generateBlue, generateYellow} from "./colors.js";
+import {generateBlack, generateRed, generateBlue, generateYellow, paintLabels} from "./colors.js";
 
 function changeColor(circle){
     const color = circle.classList[1]
@@ -20,11 +20,19 @@ function changeColor(circle){
             break;
     }
 }
+
 setInitialPositions();
 
 document.addEventListener('click', (event) => {
     if(event.target.classList.contains('circle')){
         changeColor(event.target)
+    }
+
+})
+
+document.addEventListener('mouseover', (event) => {
+    if(event.target.classList.contains('circle')){
+        paintLabels(event.target)
     }
 })
 
