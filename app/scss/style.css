@@ -39,20 +39,8 @@
   width: 120px;
 }
 
-.yellow-label {
-  color: #FFFF00;
-}
-
-.red-label {
+.label {
   color: #FF0000;
-}
-
-.blue-label {
-  color: #0000FF;
-}
-
-.black-label {
-  color: #000000;
 }
 
 /*# sourceMappingURL=style.css.map */
