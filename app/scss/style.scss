@@ -13,6 +13,7 @@ $yellowSize: $redSize - $redSize /2;
 .circle {
   position: absolute;
   border-radius: 50%;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .black {
